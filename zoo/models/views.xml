@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record model="ir.actions.act_window" id="action_zoo_zoo_tree">
+		<field name="name">zoo</field>
+		<field name="res_model">zoo.zoo</field>
+	</record>
+
+	<record model="ir.actions.act_window" id="action_zoo_animal_tree">
+		<field name="name">animal</field>
+		<field name="res_model"><zoo class="animal"></zoo></field>
+	</record>
+
+	<record model="ir.actions.act_window" id="action_zoo_epecie_tree">
+		<field name="name">especie</field>
+		<field name="res_model">zoo.especie</field>
+	</record>
+
+	<menuitem name="zoo" id="zoo_menu1" />
+	<menuitem name="zoo" parent="zoo_menu1" id="zoo_menu1_1" action="action_zoo_zoo_tree" />	
+	<menuitem name="animal" parent="zoo_menu1" id="zoo_menu1_1" action="action_zoo_animal_tree" />	
+	<menuitem name="especie" parent="zoo_menu1" id="zoo_menu1_2" action="action_zoo_especie_tree" />		
+
+	<record model="ir.ui.view" id="view_zoo_llibre_tree">
+		<field name="name">action_zoo_zoo</field>
+		<field name="model">zoo.zoo</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="zoo">
+				<field name="id"/>
+				<field name="grandaria"/>
+				<field name="nom"/>
+				<field name="ciutat"/>	
+                <field name="pais"/>			
+			</tree>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_biblioaj_editorial_tree">
+		<field name="name">zoo_animal</field>
+		<field name="model">zoo.animal</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="animal">
+				<field name="id"/>
+				<field name="contorigin"/>
+				<field name="datnaix"/>	
+                <field name="paisorigin"/>	
+                <field name="sexe"/>		
+			</tree>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_biblioaj_autor_tree">
+		<field name="name">zoo_especie</field>
+		<field name="model">zoo.especie</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="epecie">
+				<field name="id"/>
+				<field name="familia"/>
+				<field name="nomcientific"/>
+                <field name="nomvulgar"/>				
+				<field name="perill"/>				
+			</tree>
+		</field>
+	</record>
+
+	</data>
+</odoo>
